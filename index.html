@@ -1,0 +1,42 @@
+<html>
+<head>
+
+	<meta charset="UTF-8" />
+
+	<script src='../navbar/navbarManager.js' type="text/javascript"></script>
+	<script src='scriptManager.js' type="text/javascript"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+	<link href="../bootstrap-3.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../bootstrap-3.0.0/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="../bootstrap-3.0.0/examples/theme/theme.css" rel="stylesheet">
+	<link href="../bootstrap-3.0.0/examples/starter-template/starter-template.css" rel="stylesheet">
+
+	<title>Script Simulator</title>
+
+	<link rel='shortcut icon' type='image/x-icon' href='../favicons/waveicon.jpg'>
+
+</head>
+<body onload='localNavbar("scriptSimulator")'>	
+
+	<div class='navbar navbar-inverse navbar-fixed-top' role='navigation' id='navbar'>
+	</div>
+
+	<div id='base' class='container'>
+		<div>
+			<textarea id='scriptInput' class='form-control' row='20'></textarea>
+		</div>
+		<div>
+			<button id='computeScript' type='button' class='btn btn-primary btn-lg btn-block' onclick='computeScript()'>Exécuter le script</button>
+		</div>
+		<div>
+			<textarea id='scriptOutput' class='form-control' row='10' disabled=""></textarea>
+		</div>
+	</div>
+
+</body>
+
+</html>
