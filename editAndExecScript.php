@@ -8,6 +8,8 @@
 		$php_content = $argv[1];
 	}
 
+	chmod('script.php', 0777);
+
 	write_file('script.php', $php_content);
 
 	echo shell_exec('php script.php');
