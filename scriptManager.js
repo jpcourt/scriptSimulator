@@ -1,6 +1,6 @@
 function computeScript(){
 	var scriptText = document.getElementById('scriptInput').value;
-	var phpContent = '<?php\n'+scriptText+'\n?>';
+	var phpContent = '<?php \n'+scriptText+'\n ?>';
 
 	console.log('Script saisi :\n'+phpContent);
 
