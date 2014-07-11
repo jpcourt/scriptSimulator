@@ -10,6 +10,7 @@ function computeScript(){
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				document.getElementById('scriptOutput').value = xhr.responseText;
+				console.log('Résultat obtenu : '+xhr.responseText);
 			}
 		}
 	}
