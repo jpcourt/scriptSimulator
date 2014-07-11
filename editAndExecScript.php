@@ -2,7 +2,11 @@
 
 	require_once 'file_lib.php';
 
-	$php_content = $_GET['script'];
+	if(isset($_GET['script'])){
+		$php_content = $_GET['script'];
+	}else{
+		$php_content = $argv[1];
+	}
 
 	write_file('script.php', $php_content);
 
