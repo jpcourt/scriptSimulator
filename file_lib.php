@@ -34,7 +34,7 @@
 		$res = fwrite($handle, $data);
 		fclose($handle);
 		unset($handle);
-		echo "Ecriture : ".$res."\r\n";
+		//echo "Ecriture : ".$res."\r\n";
 	}
 
 	function append_file($filepath, $data){
@@ -43,7 +43,7 @@
 		$res = fwrite($handle, $data);
 		fclose($handle);
 		unset($handle);
-		echo "Ajout : ".$res."\r\n";
+		//echo "Ajout : ".$res."\r\n";
 	}
 
 ?>
