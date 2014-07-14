@@ -9,8 +9,17 @@ function computeScript(){
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
-				document.getElementById('scriptOutput').value = xhr.responseText;
-				console.log('Résultat obtenu : '+xhr.responseText);
+				var xhr2 = new XMLHttpRequest();
+				xhr2.open('GET', 'script.php');
+				xhr2.onreadystatechange = function(aEvt) {
+					if (xhr.readyState == 4) {
+						if (xhr.status == 200) {
+							document.getElementById('scriptOutput').value = xhr2.responseText;
+							console.log('Résultat obtenu : '+xhr2.responseText);
+						}
+					}
+				}
+				xhr2.send();
 			}
 		}
 	}

@@ -14,6 +14,6 @@
 
 	write_file('script.php', $php_content);
 
-	echo exec('php script.php');
+	//echo exec('php script.php');
 
 ?>
