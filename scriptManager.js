@@ -33,6 +33,7 @@ function displayScripts(){
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var scriptList = JSON.parse(xhr.response);
+				console.log(scriptList);
 				var buttonList = "";
 				scriptList.foreach(function(script){
 					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript('+'"'+script.replace('.php', '')+'"'+')">'+script+'</button>';
