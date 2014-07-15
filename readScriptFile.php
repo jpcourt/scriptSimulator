@@ -4,6 +4,6 @@
 
 	$script = $_GET['script'];
 
-	return read_file('data/'.$script);
+	echo read_file('data/'.$script);
 
 ?>
