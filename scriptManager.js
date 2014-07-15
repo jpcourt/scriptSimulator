@@ -35,7 +35,7 @@ function displayScripts(){
 				var scriptList = JSON.parse(xhr.response);
 				console.log(scriptList);
 				var buttonList = "";
-				scriptList.foreach(function(script){
+				scriptList.forEach(function(script){
 					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript('+'"'+script.replace('.php', '')+'"'+')">'+script+'</button>';
 				});
 				document.getElementById('scriptList').innerHTML = buttonList;
