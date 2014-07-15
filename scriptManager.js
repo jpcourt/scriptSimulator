@@ -32,7 +32,7 @@ function displayScripts(){
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
-				var scriptList = xhr.response;
+				var scriptList = JSON.parse(xhr.response);
 				var buttonList = "";
 				scriptList.foreach(function(script){
 					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript('+'"'+script.replace('.php', '')+'"'+')">'+script+'</button>';
