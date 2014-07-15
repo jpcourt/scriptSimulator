@@ -36,7 +36,7 @@ function displayScripts(){
 				console.log(scriptList);
 				var buttonList = "";
 				scriptList.forEach(function(script){
-					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript('+script+')">'+script.replace('.php','')+'</button>';
+					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript('+JSON.stringify(script)+')">'+script.replace('.php','')+'</button>';
 				});
 				document.getElementById('scriptList').innerHTML = buttonList;
 			}
