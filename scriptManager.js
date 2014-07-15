@@ -57,6 +57,6 @@ function setCurrentScript(scriptName){
 			}
 		}
 	}
-	xhr.open();
+	xhr.send();
 
 }
