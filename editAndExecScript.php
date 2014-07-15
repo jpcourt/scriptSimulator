@@ -8,7 +8,7 @@
 		$script_name = $argv[1];
 	}
 
-	$body = http_get_request_body();
+	$body = file_get_contents('php://input');
 
 	$php_content = "<?php \n".$body."\n ?>";
 
