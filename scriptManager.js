@@ -53,7 +53,7 @@ function setCurrentScript(scriptName){
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
-				document.getElementById('scriptInput').value = xhr.response.replace("<?php \r\n", '').replace("\r\n ?>", '');
+				document.getElementById('scriptInput').value = xhr.response.replace("<?php ", '').replace(" ?>", '');
 			}
 		}
 	}
