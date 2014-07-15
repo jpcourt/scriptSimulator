@@ -26,20 +26,14 @@
 	</div>
 
 	<div id='base' class='container'>
-		<div>
-			<textarea id='scriptName' class='form-control' row='1' placeholder='Nom du script'></textarea>
-		</div>
-		<div>
-			<textarea id='scriptInput' class='form-control' row='20'></textarea>
-		</div>
-		<div>
-			<button id='computeScript' type='button' class='btn btn-primary btn-lg btn-block' onclick='computeScript()'>Exécuter le script</button>
-		</div>
-		<div>
-			<form role='form'>
-				<textarea id='scriptOutput' class='form-control' row='10' disabled=""></textarea>
-			</form>
-		</div>
+		<form role='form'>
+			<div class='form-group'>
+				<input id='scriptName' type='text' class='form-control' placeholder='Nom du script'>
+				<textarea id='scriptInput' class='form-control' rows='20'></textarea>
+				<button id='computeScript' type='button' class='btn btn-primary btn-lg btn-block' onclick='computeScript()'>Exécuter le script</button>
+				<textarea id='scriptOutput' class='form-control' rows='10' disabled=""></textarea>
+			</div>
+		</form>
 	</div>
 
 </body>
