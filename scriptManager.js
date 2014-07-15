@@ -1,16 +1,16 @@
 function computeScript(){
 	var phpContent = document.getElementById('scriptInput').value;
-	//var phpContent = '<?php \n'+scriptText+'\n ?>';
+	var scriptName = document.getElementById('scriptName').value;
 
 	console.log('Script saisi :\n'+phpContent);
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', 'editAndExecScript.php?script=testScript');
+	xhr.open('POST', 'editAndExecScript.php?script='+scriptName);
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var xhr2 = new XMLHttpRequest();
-				xhr2.open('GET', 'testScript.php');
+				xhr2.open('GET', scriptName+'.php');
 				xhr2.onreadystatechange = function(aEvt) {
 					if (xhr.readyState == 4) {
 						if (xhr.status == 200) {
