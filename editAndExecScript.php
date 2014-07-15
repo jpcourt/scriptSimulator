@@ -3,16 +3,18 @@
 	require_once 'file_lib.php';
 
 	if(isset($_GET['script'])){
-		$php_content = $_GET['script'];
+		$script_name = $_GET['script'];
 	}else{
-		$php_content = $argv[1];
+		$script_name = $argv[1];
 	}
 
-	$php_content = "<?php \n".urldecode($php_content)."\n ?>";
+	$body = http_get_request_body();
 
-	chmod('script.php', 0777);
+	$php_content = "<?php \n".$body."\n ?>";
 
-	write_file('script.php', $php_content);
+	write_file($script_name.'.php', $php_content);
+
+	chmod($script_name.'.php', 0777);
 
 	//echo exec('php script.php');
 

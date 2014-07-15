@@ -5,7 +5,7 @@ function computeScript(){
 	console.log('Script saisi :\n'+phpContent);
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'editAndExecScript.php?script='+encodeURIComponent(phpContent));
+	xhr.open('POST', 'editAndExecScript.php?script=testScript');
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
@@ -23,5 +23,5 @@ function computeScript(){
 			}
 		}
 	}
-	xhr.send();
+	xhr.send(phpContent);
 }
