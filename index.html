@@ -20,7 +20,7 @@
 	<link rel='shortcut icon' type='image/x-icon' href='../favicons/waveicon.jpg'>
 
 </head>
-<body onload='localNavbar("scriptSimulator")'>	
+<body onload='localNavbar("scriptSimulator"), displayScripts()'>	
 
 	<div class='navbar navbar-inverse navbar-fixed-top' role='navigation' id='navbar'>
 	</div>
@@ -38,6 +38,8 @@
 				<textarea id='scriptOutput' class='form-control' rows='10' disabled=""></textarea>
 			</div>
 		</form>
+	</div>
+	<div class='container' id='scriptList'>
 	</div>
 
 </body>

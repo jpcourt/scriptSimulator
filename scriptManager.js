@@ -25,3 +25,37 @@ function computeScript(){
 	}
 	xhr.send(phpContent);
 }
+
+function displayScripts(){
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'getScriptList.php');
+	xhr.onreadystatechange = function(aEvt) {
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				var scriptList = xhr.response;
+				var buttonList = "";
+				scriptList.foreach(function(script){
+					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript('+'"'+script.replace('.php', '')+'"'+')">'+script+'</button>';
+				});
+				document.getElementById('scriptList').innerHTML = buttonList;
+			}
+		}
+	}
+	xhr.send();
+
+}
+
+function setCurrentScript(scriptName){
+	document.getElementById('scriptName').value = scriptName.replace('.php', '');
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'readScriptFile.php?script='+scriptName);
+	xhr.onreadystatechange = function(aEvt) {
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				document.getElementById('scriptInput').value = xhr.response.replace("<?php \r\n", '').replace("\r\n ?>", '');
+			}
+		}
+	}
+	xhr.open();
+
+}
