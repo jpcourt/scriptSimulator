@@ -10,7 +10,7 @@ function computeScript(){
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var xhr2 = new XMLHttpRequest();
-				xhr2.open('GET', 'script.php');
+				xhr2.open('GET', 'testScript.php');
 				xhr2.onreadystatechange = function(aEvt) {
 					if (xhr.readyState == 4) {
 						if (xhr.status == 200) {
