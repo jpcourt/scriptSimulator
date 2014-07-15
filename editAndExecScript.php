@@ -12,9 +12,9 @@
 
 	$php_content = "<?php \n".$body."\n ?>";
 
-	write_file($script_name.'.php', $php_content);
+	write_file('data/'.$script_name.'.php', $php_content);
 
-	chmod($script_name.'.php', 0777);
+	chmod('data/'.$script_name.'.php', 0777);
 
 	//echo exec('php script.php');
 
