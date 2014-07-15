@@ -16,6 +16,7 @@ function computeScript(){
 						if (xhr.status == 200) {
 							document.getElementById('scriptOutput').value = xhr2.responseText;
 							console.log('Résultat obtenu : '+xhr2.responseText);
+							displayScripts();
 						}
 					}
 				}
