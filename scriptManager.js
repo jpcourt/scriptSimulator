@@ -14,10 +14,10 @@ function computeScript(){
 				var xhr2 = new XMLHttpRequest();
 				xhr2.open('GET', 'data/'+scriptName+'.php');
 				xhr2.onreadystatechange = function(aEvt) {
-					if (xhr.readyState == 4) {
-						if (xhr.status == 200) {
-							document.getElementById('scriptOutput').value = xhr2.responseText;
-							console.log('Résultat obtenu : '+xhr2.responseText);
+					if (xhr2.readyState == 4) {
+						if (xhr2.status == 200) {
+							document.getElementById('scriptOutput').value = xhr2.response;
+							console.log('Résultat obtenu : '+xhr2.response);
 							displayScripts();
 						}
 					}
@@ -36,7 +36,7 @@ function displayScripts(){
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var scriptList = JSON.parse(xhr.response);
-				console.log(scriptList);
+				//console.log(scriptList);
 				var buttonList = "";
 				scriptList.forEach(function(script){
 					buttonList += '<button type="button" class="btn btn-primary" onclick="setCurrentScript(\''+script+'\')">'+script.replace('.php','')+'</button>';
