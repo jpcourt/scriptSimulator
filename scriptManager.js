@@ -57,6 +57,8 @@ function setCurrentScript(scriptName){
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
 				var phpContent = xhr.response;
+				console.log('current script =');
+				console.log(phpContent);
 				phpContent = phpContent.replace("<?php ", '');
 				phpContent = phpContent.replace(" ?>", '');
 				phpContent = phpContent.replace("%0A", "<br>");
