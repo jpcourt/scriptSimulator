@@ -1,6 +1,7 @@
 function computeScript(){
 	var phpContent = document.getElementById('scriptInput').value;
-	phpContent = phpContent.replace('<br>', '%0D');
+	phpContent = phpContent.replace(/\r/, "\r");
+	phpContent = phpContent.replace(/\n/, "\n");
 	var scriptName = document.getElementById('scriptName').value;
 
 	console.log('Script saisi :\n'+phpContent);
