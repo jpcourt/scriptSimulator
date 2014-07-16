@@ -1,5 +1,6 @@
 function computeScript(){
 	var phpContent = document.getElementById('scriptInput').value;
+	phpContent = phpContent.replace('<br>', '%0D');
 	var scriptName = document.getElementById('scriptName').value;
 
 	console.log('Script saisi :\n'+phpContent);
@@ -54,7 +55,12 @@ function setCurrentScript(scriptName){
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
-				document.getElementById('scriptInput').value = xhr.response.replace("<?php ", '').replace(" ?>", '');
+				var phpContent = xhr.response;
+				phpContent = phpContent.replace("<?php ", '');
+				phpContent = phpContent.replace(" ?>", '');
+				phpContent = phpContent.replace("%0A", "<br>");
+				phpContent = phpContent.replace("%0D", "<br>");
+				document.getElementById('scriptInput').value = phpContent;
 			}
 		}
 	}
