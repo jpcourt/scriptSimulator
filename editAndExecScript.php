@@ -10,7 +10,7 @@
 
 	$body = file_get_contents('php://input');
 
-	$php_content = "<?php \r\n".$body."\r\n ?>";
+	$php_content = "<?php \n".$body."\n ?>";
 
 	write_file('data/'.$script_name.'.php', $php_content);
 
