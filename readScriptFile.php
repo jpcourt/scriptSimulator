@@ -4,6 +4,6 @@
 
 	$script = $_GET['script'];
 
-	echo read_file('data/'.$script);
+	echo str_replace(array("<?php \n", "\n ?>"), "", read_file('data/'.$script));
 
 ?>

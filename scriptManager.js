@@ -59,10 +59,10 @@ function setCurrentScript(scriptName){
 				var phpContent = xhr.response;
 				console.log('current script =');
 				console.log(phpContent);
-				phpContent = phpContent.replace("<?php ", '');
-				phpContent = phpContent.replace(" ?>", '');
-				phpContent = phpContent.replace("%0A", "<br>");
-				phpContent = phpContent.replace("%0D", "<br>");
+				//phpContent = phpContent.replace("<?php ", '');
+				//phpContent = phpContent.replace(" ?>", '');
+				//phpContent = phpContent.replace("%0A", "<br>");
+				//phpContent = phpContent.replace("%0D", "<br>");
 				document.getElementById('scriptInput').value = phpContent;
 			}
 		}
