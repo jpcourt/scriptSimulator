@@ -64,6 +64,7 @@ function setCurrentScript(scriptName){
 				//phpContent = phpContent.replace("%0A", "<br>");
 				//phpContent = phpContent.replace("%0D", "<br>");
 				document.getElementById('scriptInput').value = phpContent;
+				document.getElementById('scriptOutput').value = "";
 			}
 		}
 	}
